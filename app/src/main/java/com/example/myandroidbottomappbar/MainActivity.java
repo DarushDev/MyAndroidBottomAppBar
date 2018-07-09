@@ -15,16 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         BottomAppBar bottomAppBar = findViewById(R.id.bottom_appbar);
         setSupportActionBar(bottomAppBar);
-
-        bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Navigation icon clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
@@ -43,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Dashboard", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.menu_notifications) {
             Toast.makeText(this, "Notifications", Toast.LENGTH_SHORT).show();
+        } else if (itemId == android.R.id.home) {
+            BottomNavigationDrawerFragment bottomSheet = new BottomNavigationDrawerFragment();
+            bottomSheet.show(getSupportFragmentManager(), "tag");
         }
         return true;
     }
