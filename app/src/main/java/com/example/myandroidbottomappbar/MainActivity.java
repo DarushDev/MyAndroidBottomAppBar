@@ -2,6 +2,7 @@ package com.example.myandroidbottomappbar;
 
 import android.os.Bundle;
 import android.support.design.bottomappbar.BottomAppBar;
+import android.support.design.button.MaterialButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +11,33 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    BottomAppBar bottomAppBar;
+    MaterialButton btnMaterial;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomAppBar bottomAppBar = findViewById(R.id.bottom_appbar);
+        bottomAppBar = findViewById(R.id.bottom_appbar);
         setSupportActionBar(bottomAppBar);
+
+        findViewById(R.id.materialButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toggleBottomAppBarFabAlignment();
+            }
+        });
+
+    }
+
+    private void toggleBottomAppBarFabAlignment() {
+
+        if (bottomAppBar.getFabAlignmentMode() == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER) {
+            bottomAppBar.setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_END);
+        } else {
+            bottomAppBar.setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_CENTER);
+        }
 
     }
 

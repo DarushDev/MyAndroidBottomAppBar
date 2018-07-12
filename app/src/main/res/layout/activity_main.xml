@@ -21,14 +21,38 @@
         app:fabCradleVerticalOffset="3dp"
         app:hideOnScroll="true"
         app:navigationIcon="@drawable/ic_menu_white_24dp"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_white_24dp"
-        app:layout_anchor="@+id/bottom_appbar" />
+        app:layout_anchor="@+id/bottom_appbar"
+        app:srcCompat="@drawable/ic_add_white_24dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:padding="18dp"
+            android:text="Toggle FAB Position"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="#fff"
+            app:backgroundTint="@color/colorPrimary"
+            app:icon="@android:drawable/ic_input_get"
+            app:iconTint="@android:color/holo_red_dark"
+            app:rippleColor="@color/colorAccent"
+            app:strokeColor="@android:color/holo_green_dark"
+            app:strokeWidth="3dp" />
+
+    </FrameLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
