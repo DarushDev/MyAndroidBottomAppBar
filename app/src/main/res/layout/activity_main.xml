@@ -20,6 +20,7 @@
         app:fabCradleRoundedCornerRadius="6dp"
         app:fabCradleVerticalOffset="3dp"
         app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways"
         app:navigationIcon="@drawable/ic_menu_white_24dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
